@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #fbc323;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 14vh; /* Usando vh para uma altura relativa à viewport */
+    width: 100%;
+}
+
+/* left part */
+header .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 15%;
+}
+
+header .logo img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+header .logo h2 {
+    padding: 15px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+header .logo h2 span {
+    display: flex;
+    color: #422c005e;
+}
+
+header .logo h1 {
+    padding-left: 35px;
+}
+
+header .Analystic {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    color: aliceblue;
+}
+
+/*************************/
+
+header .direita {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 43%;
+    gap: 20px;
+}
+
+header .direita img {
+    justify-content: flex-end;
+    object-fit: contain;
+    height: 70%;
+    width: auto; /* Ajuste automático para evitar distorção */
+    border-radius: 50%;
+    padding: 10px 40px;
+}
+
+header .direita .informacoes {
+    line-height: 1.5; /* Ajuste de line-height para melhor legibilidade */
+    font-weight: 500;
+}
+
+header .direita .informacoes span {
+    color: #d90000;
+    font-weight: bold;
+}
+
+/* TOGGLE BUTTON */
+header .DarkMode {
+    text-align: center;
+    position: relative;
+    display: flex;
+    background-color: black;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+header .DarkMode input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+header .DarkMode .bola {
+    box-sizing: border-box;
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    border-radius: 8px;
+    transition: .4s;
+    z-index: 1001;
+}
+
+header .DarkMode::before {
+    content: "";
+    position: absolute;
+    transition: .4s;
+    z-index: 1001;
+    background-color: white;
+}
+
+header input:checked + .bola {
+    position: absolute;
+    background-color: white;
+    transform: translateX(30px);
+    z-index: 1001;
+}
+
+header .DarkMode span {
+    position: relative;
+    z-index: 1003;
+    padding: 2px;
+    justify-content: space-between;
+    color: black;
+    display: flex;
+}
+
+/* SIDE BAR */
+.containerP {
+    background-color: #f1a200;
+    margin-left: 15px;
+    margin-bottom: 50px;
+    height: 92.5%; /* Ajuste de altura automática */
+    width: 100%;
+    border-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* ICONES */
+.containerP .borda > .icon {
+    border-top-right-radius: 15px;
+}
+
+.containerP .borda1 > .icon {
+    border-bottom-right-radius: 15px;
+}
+
+.containerP .icon {
+    height: 11%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 8px;
+    padding: 10px;
+    color: black;
+    background-color: #ffd633;
+    transition: transform 0.5s ease-in-out;
+}
+
+.containerP .icon:hover {
+    cursor: pointer;
+    background-color: #d9a600;
+    border-top-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+    transform: translateX(10px);
+}
+
+.icon.clicked {
+    transform: translateX(10px);
+    transition: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* TOP -------------------------------
+--------------------------------------- MID */
+.container-top-mid {
+    display: grid;
+    grid-template-columns: 14% 58% 25%;
+    gap: 3%;
+    width: 100%;
+    height: calc(100vh - 14vh); /* Ajuste da altura restante da página */
+    background-color: aqua;
+}
+
+.container-mid {
+    display: grid;
+    grid-template-areas: 
+    'square square1 square2'
+    'usuario usuario usuario'
+     'Users Users Users'
+     'orders orders orders'
+     'pedidos pedidos pedidos';
+     grid-template-columns: 31% 31% 32%;
+     grid-template-rows: 20% 2% 26% 2% 30%;
+     gap: 3%;
+    background-color: red;
+    align-items: center;
+    height: 100%; /* Usar 100% para ocupar toda a altura disponível */
+
+}
+.container-mid .square{
+    height: 100%;
+    width: 100%;
+    grid-area: square;
+    background-color: azure;
+    border:none;
+    border-radius: 15px;
+    padding: 5px;
+}
+.container-mid .square1{
+    height: 100%;
+    width: 100%;
+    grid-area: square1;
+    background-color: azure;
+    border:none;
+    border-radius: 15px;
+    padding: 5px;
+}
+.container-mid .square2{
+    height: 100%;
+    width: 100%;
+    grid-area: square2;
+    background-color: azure;
+    border:none;
+    border-radius: 15px;
+    padding: 5px;
+}
+.container-mid-mid{
+    background-color: blue;
+}
+.container-mid .Users{
+    height: 100%;
+    width: 100%;
+    grid-area: Users;
+    background-color: orange;
+}
+#users{
+    grid-area: usuario;
+    
+}
+.container-mid .pedidos{
+    height: 100%;
+    width: 100%;
+    grid-area: pedidos;
+    background-color: orange;
+}
+#pedidos{
+    grid-area: orders;
+    
+}
